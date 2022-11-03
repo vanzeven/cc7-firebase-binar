@@ -1,0 +1,5 @@
+
+*.bin
+*.lock
+# Project exclude paths
+/.gradle/
