@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667664053403",
+    "project_id": "fir-binar-ea642",
+    "storage_bucket": "fir-binar-ea642.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667664053403:android:6797089daf68acd122423e",
+        "android_client_info": {
+          "package_name": "com.example.moviedb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667664053403-rcebtd0gti7m3tjkg7bfaqrvvhk2t3kt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjqXC8X1dmjozFXzc84-Xa1hFclNH8ko0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667664053403-rcebtd0gti7m3tjkg7bfaqrvvhk2t3kt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
