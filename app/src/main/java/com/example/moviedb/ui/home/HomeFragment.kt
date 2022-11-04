@@ -55,6 +55,9 @@ class HomeFragment : Fragment() {
         homeViewModel.getUsername().observe(viewLifecycleOwner) {
             binding.tvUser.text = "Welcome, " + it.toString() + "!"
         }
+        binding.tvUser.setOnClickListener {
+            throw java.lang.RuntimeException("Test Crash")
+        }
         binding.btnProfile.setOnClickListener{ findNavController().navigate(R.id.action_noteFragment_to_profileFragment) }
 
         recyclerView.layoutManager = LinearLayoutManager(context)
