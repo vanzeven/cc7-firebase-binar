@@ -34,6 +34,9 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener { login() }
         binding.btnLogin.isClickable = false
         binding.btnRegister.isClickable = false
+        binding.tvLogin.setOnClickListener {
+            throw java.lang.RuntimeException("Test Crash")
+        }
 
         val option = NavOptions.Builder()
             .setPopUpTo(R.id.loginFragment, true)

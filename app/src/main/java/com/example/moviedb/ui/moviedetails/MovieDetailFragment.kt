@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.moviedb.databinding.FragmentMovieDetailBinding
-import com.example.moviedb.di.ApiClient
+import kotlin.math.roundToInt
 import com.example.moviedb.di.ApiService
 import com.example.moviedb.model.GetPopularItem
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,7 +50,7 @@ class MovieDetailFragment : Fragment() {
                 val imageBase = "https://image.tmdb.org/t/p/w500/"
 
                 val title: String = body?.title + " (" + body?.releaseDate?.take(4) +  ")"
-                val rating = "Rating: " + body?.voteAverage.toString()
+                val rating = "Rating: " + body?.voteAverage?.toDouble()?.times(10)?.roundToInt()?.toDouble()?.div(10).toString()
                 val runtime = "Runtime: " + body?.runtime.toString() + " minutes"
                 binding.tvTitle.text = title
                 binding.tvRating.text = rating

@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.moviedb.R
 import com.example.moviedb.databinding.MovieItemBinding
 import com.example.moviedb.model.GetPopularItem
+import kotlin.math.roundToInt
 
 class HomeAdapter(private val movies: List<GetPopularItem>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
@@ -18,7 +19,7 @@ class HomeAdapter(private val movies: List<GetPopularItem>) : RecyclerView.Adapt
         fun bindMovie(movie: GetPopularItem){
             val titleAndYear = movie.title + " (" + movie.releaseDate?.take(4) +  ")"
             binding.tvTitle.text = titleAndYear
-            binding.tvRating.text = movie.voteAverage.toString()
+            binding.tvRating.text = movie.voteAverage?.toDouble()?.times(10)?.roundToInt()?.toDouble()?.div(10).toString()
             Glide.with(itemView.context).load(imageBase + movie.posterPath).into(binding.ivPoster)
 
             binding.rvMovie.setOnClickListener{
