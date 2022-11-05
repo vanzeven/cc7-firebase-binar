@@ -30,6 +30,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        original {
+            dimension "version"
+            applicationIdSuffix ".ori"
+            versionNameSuffix "-ori"
+        }
+        red {
+            dimension "version"
+            applicationIdSuffix ".red"
+            versionNameSuffix "-red"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
