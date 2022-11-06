@@ -37,7 +37,7 @@ class RegisterFragment : Fragment() {
         val password = binding.etPassword.text.toString()
         val confirmPassword = binding.etKonpassword.text.toString()
 
-        if (username != "") {
+        if (RegistrationUtil.validRegistrationInput(username,email,password,confirmPassword)) {
             if (password == confirmPassword) {
                 registerViewModel.saveAccount(username, password, email)
                 Toast.makeText(requireContext(), "Pendaftaran berhasil", Toast.LENGTH_SHORT).show()
@@ -46,7 +46,7 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(requireContext(), "Password tidak sama", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Toast.makeText(requireContext(), "Username tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Username, email, atau password belum sesuai", Toast.LENGTH_SHORT).show()
         }
     }
 
