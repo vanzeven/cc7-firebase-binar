@@ -36,17 +36,6 @@ class RegistrationUtilTest {
         assertThat(result).isTrue()
     }
 
-    // in this test userName already taken returns false
-//    @Test
-//    fun `username already taken returns false`() {
-//        val result = RegistrationUtil.validRegistrationInput(
-//            "Rohan",
-//            "123",
-//            "123"
-//        )
-//        assertThat(result).isFalse()
-//    }
-
     // if confirm password does nt matches the password return false
     @Test
     fun `incorrect confirm password returns false`() {
@@ -61,12 +50,60 @@ class RegistrationUtilTest {
 
     // in this test if password has less than two digits than return false
     @Test
-    fun `less than two digit password return false`() {
+    fun `less than two character password return false`() {
         val result = RegistrationUtil.validRegistrationInput(
             "faisal",
             "faisal@gmail.com",
             "a",
             "a"
+        )
+        assertThat(result).isFalse()
+    }
+
+    // correct email input
+    @Test
+    fun correctEmail() {
+        val result = RegistrationUtil.validRegistrationInput(
+            "faisal",
+            "faisal@gmail.com",
+            "aa",
+            "aa"
+        )
+        assertThat(result).isTrue()
+    }
+
+    // email with subdomain
+    @Test
+    fun emailSubdomain() {
+        val result = RegistrationUtil.validRegistrationInput(
+            "faisal",
+            "faisal@gmail.co.id",
+            "aa",
+            "aa"
+        )
+        assertThat(result).isTrue()
+    }
+
+    // without top level domain
+    @Test
+    fun withoutTld() {
+        val result = RegistrationUtil.validRegistrationInput(
+            "faisal",
+            "faisal@gmail",
+            "aa",
+            "aa"
+        )
+        assertThat(result).isFalse()
+    }
+
+    // with extra character
+    @Test
+    fun withExtraChar() {
+        val result = RegistrationUtil.validRegistrationInput(
+            "faisal",
+            "faisal@gmail..com",
+            "aa",
+            "aa"
         )
         assertThat(result).isFalse()
     }

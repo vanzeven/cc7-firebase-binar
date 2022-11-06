@@ -4,8 +4,6 @@ import java.util.regex.Pattern
 
 object RegistrationUtil {
 
-    private val existingUsers = listOf("Faisal" , "Reza")
-
     /**
      * The test cases will pass if..
      * ...username/password/confirmPassword is not empty
