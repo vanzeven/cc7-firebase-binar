@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:667664053403:android:6797089daf68acd122423e",
         "android_client_info": {
-          "package_name": "com.example.moviedb"
+          "package_name": "com.example.moviedb.ori"
         }
       },
       "oauth_client": [
